@@ -1,23 +1,16 @@
-<!-- <div *ngIf='!profile'>
-  <label for="authToken">Token :</label>
-  <input id="authToken" [(ngModel)]="authToken">
-  <button (click)="getUser()">LOGIN</button>
-  <span *ngIf='error'>{{error}}</span>
-</div> -->
-
-<div *ngIf="profile">
-  <div>User name:{{profile.username}}</div>
-  <div>User id: {{profile.userId}}</div>
-  <button (click)="logout()">LOGOUT</button>
+<div *ngIf="profile" class="wrapper">
+  <h1>You're welcome {{profile.username}} </h1>
+  <p>Your id: {{profile.userId}}</p>
+  <button mat-raised-button color="primary" (click)="logout()">LOGOUT</button>
 </div>
 
-<div *ngIf='!profile'>
-  <form>
+<div class="wrapper"> 
+  <form *ngIf='!profile'>
     <mat-form-field appearance="fill">
       <mat-label for="authToken">Leave a Token</mat-label>
-      <textarea matInput id="authToken" [(ngModel)]="authToken" placeholder="Token"></textarea>
+      <input matInput id="authToken" [(ngModel)]="authToken" [ngModelOptions]="{standalone: true}" placeholder="Token">
+      <span *ngIf='error' class="error">{{error}}</span>
     </mat-form-field>
-    <button (click)="getUser()">LOGIN</button>
-    <span *ngIf='error'>{{error}}</span>
+    <button mat-raised-button color="primary" (click)="getUser()" class="btn">check</button>
   </form>
 </div>

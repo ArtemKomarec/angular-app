@@ -19,6 +19,7 @@ export class AppComponent {
   logout() {
     this.authToken = undefined;
     this.profile = undefined;
+    this.error = '';
   }
 
   getUser() {
