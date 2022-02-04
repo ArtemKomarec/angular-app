@@ -30,7 +30,6 @@ export class AppComponent {
       }, (e) => {
         console.log('>>', e);
         this.error = 'Invalid. Try again'
-        console.log(this.error)
       });
   }
 }
